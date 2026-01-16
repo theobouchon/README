@@ -13,15 +13,7 @@ Script **Python** qui :
 ## Sommaire
 - [Fonctionnalités](#fonctionnalités)
 - [Architecture du code](#architecture-du-code)
-- [Données en sortie (Dataframe et CSV)](#données-en-sortie-csv)
-- [Prérequis](#prérequis)
-- [Installation](#installation)
-- [Configuration](#configuration)
-  - [Configuration de l’email](#configuration-de-lemail)
-- [Exécution](#exécution)
-- [Dépannage](#dépannage)
-- [Limites et améliorations](#limites-et-améliorations)
-- [Crédits et sources](#crédits-et-sources)
+- [Données en sortie (DataFrame et CSV)](#données-en-sortie-dataframe-csv)
 
 ---
 
@@ -52,6 +44,7 @@ Script **Python** qui :
   - `pandas` : création Dataframe et export CSV
   - `smtplib` + `email.mime.text` : envoi email
 - Structure centrale : `cve_dico` (dictionnaire “colonne → liste de valeurs”, converti en `DataFrame` à la fin)
+    - Remplissage progressif de `cve_dico` lors du parcours des `cve_id` dans `cve_list` (valeurs → liste correspondante dans `cve_dico`) 
 
 <img width="666" height="253" alt="Cve dico" src="https://github.com/user-attachments/assets/f50716a8-9f29-41a9-a1a4-0465aab10aae" />
 
@@ -115,13 +108,13 @@ Script **Python** qui :
 <img width="705" height="117" alt="Score EPSS" src="https://github.com/user-attachments/assets/ef3feaef-20c3-4e26-bef2-4c5a1ff6159a" />
 
 ### 7) Export CSV
-- Convertit `cve_dico` en `DataFrame`
+- Convertit `cve_dico` en `DataFrame` : l'architecture utilisée pour `cve_dico` facilite la conversion
 - Exporte `projet.csv` sans index
 <img width="439" height="49" alt="Création du dataframe" src="https://github.com/user-attachments/assets/9541cc88-c226-4309-b125-85e3f526db0e" />
 
 ---
 
-## Données en sortie (Dataframe et CSV)
+## Données en sortie (DataFrame et CSV)
 
 Colonnes exportées :
 - `Identifiant CVE`
@@ -142,16 +135,4 @@ Colonnes exportées :
 
 ---
 
-## Prérequis
-
-- Python 3.8+ recommandé
-- Accès Internet (CERT-FR, MITRE, FIRST)
-
----
-
-## Installation
-
-### 1) Installer les dépendances
-
-```bash
-pip install feedparser requests pandas
+## Merci de votre attention 
