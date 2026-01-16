@@ -13,7 +13,7 @@ Script **Python** qui :
 ## Sommaire
 - [Fonctionnalités](#fonctionnalités)
 - [Architecture du code](#architecture-du-code)
-- [Données en sortie (DataFrame et CSV)](#données-en-sortie-dataframe-csv)
+- [Données en sortie (DataFrame et CSV)](#données-en-sortie-dataframe-et-csv)
 
 ---
 
