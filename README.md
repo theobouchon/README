@@ -43,6 +43,7 @@ Script **Python** qui :
   - `re` : regex pour extraire les CVE
   - `pandas` : création Dataframe et export CSV
   - `smtplib` + `email.mime.text` : envoi email
+- Prérequis d'installation : `$ pip install feedparser`
 - Structure centrale : `cve_dico` (dictionnaire “colonne → liste de valeurs”, converti en `DataFrame` à la fin)
     - Remplissage progressif de `cve_dico` lors du parcours des `cve_id` dans `cve_list` (valeurs → liste correspondante dans `cve_dico`) 
 
